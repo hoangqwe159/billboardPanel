@@ -281,6 +281,9 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_schedule_billboardslb_schedule_billboardsMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel14MousePressed(evt);
+            }
         });
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -291,6 +294,9 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel14lb_schedule_billboardsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel14MousePressed(evt);
             }
         });
 
@@ -304,6 +310,9 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lb_schedule_billboardsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel14MousePressed(evt);
             }
         });
 
@@ -339,6 +348,9 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_edit_usersjLabel16MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_edit_usersMousePressed(evt);
+            }
         });
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -349,6 +361,9 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel16MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_edit_usersMousePressed(evt);
             }
         });
 
@@ -362,6 +377,9 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lb_edit_usersjLabel16MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_edit_usersMousePressed(evt);
             }
         });
 
@@ -801,6 +819,16 @@ public class CreateBillboardsPage extends javax.swing.JFrame {
         setVisible(false);
         new ListBillboardsPage().setVisible(true);
     }//GEN-LAST:event_lb_list_billboardsMousePressed
+
+    private void lb_edit_usersMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_usersMousePressed
+        new EditUserPage().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lb_edit_usersMousePressed
+
+    private void jLabel14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MousePressed
+        new ScheduleBillboardsPage().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel14MousePressed
 
     /**
      * @param args the command line arguments

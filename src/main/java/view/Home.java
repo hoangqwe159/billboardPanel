@@ -471,6 +471,11 @@ public class Home extends javax.swing.JFrame {
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 690, 250, 60));
 
         jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Documents\\NetBeansProjects\\BillboardPanel\\src\\main\\java\\images\\hp-hero-mug-hover.jpg")); // NOI18N
@@ -517,7 +522,9 @@ public class Home extends javax.swing.JFrame {
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
         // TODO add your handling code here:
         new CreateBillboardsPage().setVisible(true);
+        
         setVisible(false);
+        
         
     }//GEN-LAST:event_jLabel4MousePressed
 
@@ -548,7 +555,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseExited
 
     private void jLabel14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MousePressed
-        // TODO add your handling code here:
+        new ScheduleBillboardsPage().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel14MousePressed
 
     private void lb_edit_usersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_usersMouseEntered
@@ -562,8 +570,14 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_lb_edit_usersMouseExited
 
     private void lb_edit_usersMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_usersMousePressed
-        // TODO add your handling code here:
+        new EditUserPage().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_lb_edit_usersMousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
  //btn_edit_users.setBackground(new java.awt.Color(64, 43, 100));  btn_create_billboards.setBackground(new java.awt.Color(85,65,118));
     /**
      * @param args the command line arguments

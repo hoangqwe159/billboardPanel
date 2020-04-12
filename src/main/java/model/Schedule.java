@@ -5,17 +5,70 @@
  */
 package model;
 
+
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  *
  * @author Asus
  */
-public class Schedule implements Serializable {
+public class Schedule implements Serializable, Comparable<Schedule> {
        
+    private String message;
     private int scheduleId, billboardId, timeLimit, nextRun;
     private Date startTime, createdAt, updateAt; 
+    private ArrayList<Date> startRun, endRun;
+    private ArrayList<Date> runTime;
+
+  
+
+    
+    
+    
+    
+
+    public Schedule(Date updateAt) {
+         this.updateAt = updateAt;
+    }
+
+    public void setRunTime() {
+        long diffDay = 24 * 60 * 60 * 1000;
+        Date currentDate = new Date();
+        Date run = this.startTime;        
+        ArrayList<Date> list = new ArrayList<Date>();
+        
+        while(run.getTime() < startTime.getTime() + 6 * diffDay ) {
+            list.add(run);
+            run = new Date(run.getTime() + nextRun * 60 * 1000);
+            
+        }
+        
+        this.runTime = list;
+        
+        
+    }
+
+    public ArrayList<Date> getRunTime() {
+        return runTime;
+    }
+
+    
+
+    
+    
+    
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
 
     public int getScheduleId() {
         return scheduleId;
@@ -53,8 +106,19 @@ public class Schedule implements Serializable {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setStartTime(String  dateInString) {
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm dd-MM-yyyy");
+        try {
+
+            Date date = formatter.parse(dateInString);
+            this.startTime = date;
+            
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        
     }
 
     public Date getCreatedAt() {
@@ -71,6 +135,33 @@ public class Schedule implements Serializable {
 
     public void setUpdateAt(Date updateAt) {
         this.updateAt = updateAt;
+    }
+
+    public ArrayList<Date> getStartRun() {
+        return this.startRun;
+    }
+
+    public void setStartRun(ArrayList<Date> startRun) {
+        this.startRun = startRun;
+    }
+
+    public ArrayList<Date> getEndRun() {
+        return this.endRun;
+    }
+
+    public void setEndRun(ArrayList<Date> endRun) {
+        this.endRun = endRun;
+    }
+    @Override
+    public int compareTo(Schedule o) {
+        if (this.updateAt.getTime() -  o.updateAt.getTime() > 0){
+            return 1;
+        }else if (this.updateAt.getTime() -  o.updateAt.getTime() == 0){
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
     
     

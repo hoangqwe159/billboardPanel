@@ -92,7 +92,6 @@ public class ListBillboardsPage extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         rootPanel = new javax.swing.JPanel();
         sidepanel = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -118,6 +117,7 @@ public class ListBillboardsPage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         billboardTable = new javax.swing.JTable();
         btnEditTable = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         inputPanel = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -305,19 +305,6 @@ public class ListBillboardsPage extends javax.swing.JFrame {
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
-            }
-        });
-
-        jButton4.setBackground(new java.awt.Color(90, 148, 210));
-        jButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Add");
-        jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton4.setBorderPainted(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
             }
         });
 
@@ -545,6 +532,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_schedule_billboardslb_schedule_billboardsMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_schedule_billboardsMousePressed(evt);
+            }
         });
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -555,6 +545,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel14lb_schedule_billboardsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_schedule_billboardsMousePressed(evt);
             }
         });
 
@@ -568,6 +561,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lb_schedule_billboardsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_schedule_billboardsMousePressed(evt);
             }
         });
 
@@ -603,6 +599,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_edit_usersjLabel16MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_edit_usersMousePressed(evt);
+            }
         });
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -613,6 +612,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel16MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_edit_usersMousePressed(evt);
             }
         });
 
@@ -626,6 +628,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lb_edit_usersjLabel16MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_edit_usersMousePressed(evt);
             }
         });
 
@@ -707,6 +712,19 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(90, 148, 210));
+        jButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Add");
+        jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton4.setBorderPainted(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout listPanelLayout = new javax.swing.GroupLayout(listPanel);
         listPanel.setLayout(listPanelLayout);
         listPanelLayout.setHorizontalGroup(
@@ -718,6 +736,8 @@ public class ListBillboardsPage extends javax.swing.JFrame {
             .addGroup(listPanelLayout.createSequentialGroup()
                 .addGap(188, 188, 188)
                 .addComponent(btnEditTable, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDeleteTable, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(188, 188, 188))
@@ -736,8 +756,9 @@ public class ListBillboardsPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(listPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDeleteTable, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditTable, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                    .addComponent(btnEditTable, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
 
         rootPanel.add(listPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 970, 660));
@@ -901,7 +922,7 @@ public class ListBillboardsPage extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel15.setText("Modify your billboards as you wish");
+        jLabel15.setText("Display all your billboards ");
         jLabel15.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -913,7 +934,7 @@ public class ListBillboardsPage extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addComponent(jLabel13))
-                .addContainerGap(966, Short.MAX_VALUE))
+                .addContainerGap(1098, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1186,6 +1207,16 @@ public class ListBillboardsPage extends javax.swing.JFrame {
         new CreateBillboardsPage().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_create_billboardsMousePressed
+
+    private void btn_edit_usersMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_edit_usersMousePressed
+        new EditUserPage().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_edit_usersMousePressed
+
+    private void lb_schedule_billboardsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_schedule_billboardsMousePressed
+        new ScheduleBillboardsPage().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lb_schedule_billboardsMousePressed
 
     /**
      * @param args the command line arguments

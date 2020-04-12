@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,7 +14,8 @@ import java.util.Date;
  * @author Asus
  */
 public class User implements Serializable {
-    private  String username, password, token, permission;
+    private  String username, password, token;
+    private ArrayList<String> permission;
     private int userId;
     private Date createdAt, updateAt; 
 
@@ -41,13 +43,17 @@ public class User implements Serializable {
         this.token = token;
     }
 
-    public String getPermission() {
+    public ArrayList<String> getPermission() {
         return permission;
     }
 
-    public void setPermission(String permission) {
+    public void setPermission(ArrayList<String> permission) {
         this.permission = permission;
     }
+
+
+
+    
 
     public int getUserId() {
         return userId;
