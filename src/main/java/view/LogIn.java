@@ -171,6 +171,7 @@ public class LogIn extends javax.swing.JFrame {
 
         if (username.equals("hoangqwe159") && password.equals("12345678")) {
             new Home().setVisible(true);
+            
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(background, "Bad account");
